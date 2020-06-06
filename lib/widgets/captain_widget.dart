@@ -50,6 +50,8 @@ class _CaptainWidgetState extends State<CaptainWidget> {
                   heroes[1].name,
                   style: TextStyle(
                     fontSize: 30,
+                    fontFamily: 'Cardo',
+                    letterSpacing: 3,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

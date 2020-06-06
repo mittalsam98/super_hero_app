@@ -41,25 +41,35 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           title: Text(
             'Superheroes',
-            style: TextStyle(fontSize: 21),
+            style: TextStyle(
+              fontSize: 24,
+              letterSpacing: 2,
+              color: Colors.black.withOpacity(0.9),
+              shadows: <Shadow>[Shadow(blurRadius: 4, color: Colors.grey)],
+              fontFamily: 'Cardo',
+              fontWeight: FontWeight.w500,
+            ),
           ),
           actions: <Widget>[
-            Container(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () async {
-                  Result selectedResult = await showSearch(
-                      context: context, delegate: HeroSearchDelegate());
-                  if (selectedResult != null) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              DetailScreen(results: selectedResult)),
-                    );
-                  }
-                },
+            Padding(
+              padding: EdgeInsets.only(right: 7),
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () async {
+                    Result selectedResult = await showSearch(
+                        context: context, delegate: HeroSearchDelegate());
+                    if (selectedResult != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DetailScreen(results: selectedResult)),
+                      );
+                    }
+                  },
+                ),
               ),
             ),
           ],

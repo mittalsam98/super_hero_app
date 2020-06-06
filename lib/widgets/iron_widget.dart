@@ -47,6 +47,8 @@ class _IronManWidgetState extends State<IronManWidget> {
                   heroes[0].name,
                   style: TextStyle(
                     fontSize: 30,
+                    fontFamily: 'Cardo',
+                    letterSpacing: 3,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

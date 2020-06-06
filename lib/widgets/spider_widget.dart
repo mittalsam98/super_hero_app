@@ -50,6 +50,8 @@ class _SpiderWidgetState extends State<SpiderWidget> {
                   heroes[3].name,
                   style: TextStyle(
                     fontSize: 30,
+                    fontFamily: 'Cardo',
+                    letterSpacing: 3,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

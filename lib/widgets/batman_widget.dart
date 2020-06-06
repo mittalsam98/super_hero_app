@@ -50,6 +50,8 @@ class _BatmanWidgetState extends State<BatmanWidget> {
                   heroes[2].name,
                   style: TextStyle(
                     fontSize: 30,
+                    fontFamily: 'Cardo',
+                    letterSpacing: 3,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

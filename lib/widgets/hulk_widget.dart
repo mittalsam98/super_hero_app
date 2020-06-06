@@ -50,6 +50,8 @@ class _HulkWidgetState extends State<HulkWidget> {
                   heroes[4].name,
                   style: TextStyle(
                     fontSize: 30,
+                    fontFamily: 'Cardo',
+                    letterSpacing: 3,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
