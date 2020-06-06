@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+//    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
     _pageController = PageController();
     super.initState();
   }

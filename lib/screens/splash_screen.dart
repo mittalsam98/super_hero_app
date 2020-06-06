@@ -57,11 +57,12 @@ class _SplashScreenState extends State<SplashScreen> {
                       speed: Duration(milliseconds: 255),
                       text: ['SuperHeroes'],
                       textStyle: TextStyle(
-                          fontSize: 41.0,
-                          fontWeight: FontWeight.bold,
-                          shadows: <Shadow>[
-                            Shadow(blurRadius: 17, color: Colors.black87)
-                          ]),
+                        fontSize: 41.0,
+                        fontWeight: FontWeight.bold,
+                        shadows: <Shadow>[
+                          Shadow(blurRadius: 17, color: Colors.black87)
+                        ],
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
