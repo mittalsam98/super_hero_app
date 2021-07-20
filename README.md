@@ -1,16 +1,32 @@
-# superheroes
+# Superheroes App
 
-A new Flutter application.
+A Flutter application made with love. You can f
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+#### A full stack application to store / list places you have traveled.
 
-A few resources to get you started if this is your first Flutter project:
+Backend Repositary link : https://github.com/mittalsam98/Travel-Log-Api
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Full project is delpoyed here is deployed here :  https://travel-log-frontend-two.vercel.app/.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Some of the Glimpse are :
+
+![SC_1](https://user-images.githubusercontent.com/42431274/126252158-7d86c4ba-53d2-4b7d-8c76-ef794706131e.PNG)
+
+![SC_2](https://user-images.githubusercontent.com/42431274/126252268-295a885f-2a04-4e52-b22d-1d8973f4cb10.PNG)
+
+
+### Hi there 👋 I am Sachin, a full stack web and app developer 
+
+###  Credits 
+
+ - This is clone from Coding Garden. A huge respect to respect to Coding Garden. 
+
+# buy-me-a-coffee
+Liked some of my work? Buy me a coffee (or more likely a beer)
+
+<a href="https://www.buymeacoffee.com/sachinm" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+
