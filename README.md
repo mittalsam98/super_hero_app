@@ -1,6 +1,6 @@
-# Superheroes App ✨
+# My Superhero App ✨
 
-A Flutter application made with love and beautiful UI. You can search your favourite heroes powerstats too. It is written entirely in Dart and built with Flutter, so it can be compiled to run (very smoothly) on Android, iOS and all other platforms supported by Flutter!
+A Flutter application made with love and beautiful UI. You can search your favourite hero powerstats too. It is written entirely in Dart and built with Flutter, so it can be compiled to run (very smoothly) on Android, iOS and all other platforms supported by Flutter!
 
 [<img height="75" width="200" src="./assets/images/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=com.thesachin.superheroes)
 
