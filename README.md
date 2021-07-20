@@ -1,32 +1,37 @@
-# Superheroes App
+# Superheroes App ✨
 
-A Flutter application made with love. You can f
+A Flutter application made with love and beautiful UI. It is written entirely in Dart and built with Flutter, so it can be compiled to run (very smoothly) on Android, iOS and all other platforms supported by Flutter!
+
+[<img height="75" width="200" src="./assets/images/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=com.thesachin.superheroes)
+
 
 ## Getting Started
 
 #### A full stack application to store / list places you have traveled.
 
-Backend Repositary link : https://github.com/mittalsam98/Travel-Log-Api
+To build and run the app on your device, do the following:
 
-Full project is delpoyed here is deployed here :  https://travel-log-frontend-two.vercel.app/.
-
-
-Some of the Glimpse are :
-
-![SC_1](https://user-images.githubusercontent.com/42431274/126252158-7d86c4ba-53d2-4b7d-8c76-ef794706131e.PNG)
-
-![SC_2](https://user-images.githubusercontent.com/42431274/126252268-295a885f-2a04-4e52-b22d-1d8973f4cb10.PNG)
+-   [Install Flutter](https://flutter.dev/docs/get-started/install/) by following the instructions on their website.
+-   Clone this repo to your local machine using `git clone https://github.com/mittalsam98/super_hero_app.git`.
+-   Connect your device/emulator and run the app using `flutter run` in the root of the project directory.
 
 
 ### Hi there 👋 I am Sachin, a full stack web and app developer 
 
-###  Credits 
+## Contributing
 
- - This is clone from Coding Garden. A huge respect to respect to Coding Garden. 
+Found any bugs? Have any suggestions or code improvements? [Submit an issue](https://github.com/mittalsam98/super_hero_app/issues) or fork and send a [pull request](https://github.com/mittalsam98/super_hero_app/pulls) with your changes. All contributions are more than welcome, and will be merged into `master` if satisfactory.
 
-# buy-me-a-coffee
+
+
+## buy-me-a-coffee
 Liked some of my work? Buy me a coffee (or more likely a beer)
 
 <a href="https://www.buymeacoffee.com/sachinm" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+
+## License
+
+This project is licensed under the MIT License - do anything you want with it! See the [LICENSE](LICENSE) file for details.
 
 
