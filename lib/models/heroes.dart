@@ -23,11 +23,11 @@ List<Heroes> heroes = [
       imagePath: 'assets/images/spider.png',
       publisher: 'Marvel Comics'),
   Heroes(
+      name: 'Superman',
+      imagePath: 'assets/images/superman.png',
+      publisher: 'DC Comics'),
+  Heroes(
       name: 'Hulk',
       imagePath: 'assets/images/hulk.png',
       publisher: 'Marvel Comics'),
-//  Heroes(
-//      name: 'Thor',
-//      imagePath: 'assets/images/thor.png',
-//      publisher: 'Marvel Comics'),
 ];

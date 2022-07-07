@@ -13,6 +13,7 @@ import 'package:superheroes/widgets/hulk_widget.dart';
 import 'package:superheroes/widgets/iron_widget.dart';
 import 'package:superheroes/widgets/page_indicator.dart';
 import 'package:superheroes/widgets/spider_widget.dart';
+import 'package:superheroes/widgets/superman_widget.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,26 +34,25 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<OffsetNotifier>(
       create: (context) {
-        print('in offset notifier provide');
         return OffsetNotifier(_pageController);
       },
       child: Scaffold(
         backgroundColor: Color(0xfff2f2f2),
         appBar: AppBar(
           title: Text(
-            'Superheroes',
+            'Search ',
             style: TextStyle(
-              fontSize: 24,
-              letterSpacing: 2,
-              color: Colors.black.withOpacity(0.9),
-              shadows: <Shadow>[Shadow(blurRadius: 4, color: Colors.grey)],
+              fontSize: 20,
+              letterSpacing: 3,
+              color: Colors.black.withOpacity(0.8),
+              shadows: <Shadow>[Shadow(color: Colors.black)],
               fontFamily: 'Cardo',
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.bold,
             ),
           ),
           actions: <Widget>[
             Padding(
-              padding: EdgeInsets.only(right: 7),
+              padding: EdgeInsets.only(right: 4),
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: IconButton(
@@ -90,17 +90,22 @@ class _HomeState extends State<Home> {
                       CaptainWidget(),
                       BatmanWidget(),
                       SpiderWidget(),
+                      SupermanWidget(),
                       HulkWidget()
                     ],
                   ),
                 ),
               ),
               Container(
+                padding: EdgeInsets.only(bottom: 3),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[PageIndicator()],
                 ),
+              ),
+              SizedBox(
+                height: 10,
               )
             ],
           ),

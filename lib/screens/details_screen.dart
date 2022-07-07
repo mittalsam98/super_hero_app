@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:superheroes/json_parsing/Hero.dart';
 import 'package:superheroes/widgets/circular_percent.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DetailScreen extends StatefulWidget {
   final Result results;
@@ -29,71 +30,74 @@ class _DetailScreenState extends State<DetailScreen> {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                Container(
-                  height: 280,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(widget.results.image.url),
-                    ),
-                  ),
+                SafeArea(
                   child: Container(
+                    height: 260,
+                    width: double.infinity,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            Colors.black.withOpacity(0.8),
-                            Colors.black.withOpacity(0.2),
-                            Colors.black.withOpacity(.2),
-                          ],
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter),
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: CachedNetworkImageProvider(
+                            widget.results.image.url),
+                      ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(left: 12, top: 32),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.close,
-                              color: Colors.white,
-                              size: 30,
-                            ),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 15, right: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: <Widget>[
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: <Widget>[
-                                  Text(
-                                    widget.results.name,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    widget.results.biography.fullName,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.italic,
-                                        fontSize: 18),
-                                  ),
-                                ],
-                              ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                              Colors.black.withOpacity(0.8),
+                              Colors.black.withOpacity(0.2),
+                              Colors.black.withOpacity(.2),
                             ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(left: 12, top: 10),
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.close,
+                                color: Colors.white,
+                                size: 35,
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                            ),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 15, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: <Widget>[
+                                    Text(
+                                      widget.results.name,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      widget.results.biography.fullName,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontStyle: FontStyle.italic,
+                                          fontSize: 18),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -6,12 +6,12 @@ import 'package:superheroes/models/heroes.dart';
 import 'package:superheroes/provider/offsetNotifier.dart';
 import 'dart:math' as math;
 
-class HulkWidget extends StatefulWidget {
+class SupermanWidget extends StatefulWidget {
   @override
-  _HulkWidgetState createState() => _HulkWidgetState();
+  _SupermanWidgetState createState() => _SupermanWidgetState();
 }
 
-class _HulkWidgetState extends State<HulkWidget> {
+class _SupermanWidgetState extends State<SupermanWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,15 +20,15 @@ class _HulkWidgetState extends State<HulkWidget> {
         Consumer<OffsetNotifier>(
           builder: (context, notifier, child) {
             double multiplier;
-            if (notifier.page <= 5) {
+            if (notifier.page <= 4) {
               multiplier = math.max(
                 0,
-                math.max(0, (4 - notifier.page).abs()),
+                math.max(0, (3 - notifier.page).abs()),
               );
             } else {
               multiplier = math.max(
                 0,
-                math.max(0, (notifier.page - 6).abs()),
+                math.max(0, (notifier.page - 5).abs()),
               );
             }
             return Transform.translate(
@@ -47,7 +47,7 @@ class _HulkWidgetState extends State<HulkWidget> {
                 baseColor: Colors.black,
                 highlightColor: Colors.black54,
                 child: Text(
-                  heroes[5].name,
+                  heroes[4].name,
                   style: TextStyle(
                     fontSize: 30,
                     fontFamily: 'Cardo',
@@ -62,15 +62,15 @@ class _HulkWidgetState extends State<HulkWidget> {
         Consumer<OffsetNotifier>(
           builder: (context, notifier, child) {
             double multiplier;
-            if (notifier.page <= 5) {
+            if (notifier.page <= 4) {
               multiplier = math.max(
                 0,
-                math.max(0, (4 - notifier.page).abs()),
+                math.max(0, (3 - notifier.page).abs()),
               );
             } else {
               multiplier = math.max(
                 0,
-                math.max(0, (notifier.page - 6).abs()),
+                math.max(0, (notifier.page - 5).abs()),
               );
             }
             return Transform.scale(
@@ -89,15 +89,15 @@ class _HulkWidgetState extends State<HulkWidget> {
         Consumer<OffsetNotifier>(
           builder: (context, notifier, child) {
             double multiplier;
-            if (notifier.page <= 5) {
+            if (notifier.page <= 4) {
               multiplier = math.max(
                 0,
-                math.max(0, (4 - notifier.page).abs()),
+                math.max(0, (3 - notifier.page).abs()),
               );
             } else {
               multiplier = math.max(
                 0,
-                math.max(0, (notifier.page - 6).abs()),
+                math.max(0, (notifier.page - 5).abs()),
               );
             }
             return Transform.scale(
@@ -107,8 +107,8 @@ class _HulkWidgetState extends State<HulkWidget> {
           },
           child: Align(
             alignment: Alignment(-0.2, 0),
-            child: Image.asset(heroes[5].imagePath,
-                height: MediaQuery.of(context).size.height * 0.55),
+            child: Image.asset(heroes[4].imagePath,
+                height: MediaQuery.of(context).size.height * 0.48),
           ),
         ),
       ],

@@ -20,13 +20,16 @@ class _IronManWidgetState extends State<IronManWidget> {
           builder: (context, notifier, child) {
             return Transform.translate(
               offset: Offset(
-                  0,
-                  -60 *
-                      (1 -
-                          math.max(
-                            0,
-                            math.max(0, (1 - notifier.page)),
-                          ))),
+                0,
+                -60 *
+                    (1 -
+                        (math
+                            .max(
+                              0,
+                              math.max(0, (1 - notifier.page).abs()),
+                            )
+                            .toDouble())),
+              ),
               child: Opacity(
                 opacity: math.max(
                   0,

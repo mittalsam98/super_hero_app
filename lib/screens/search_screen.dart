@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:superheroes/json_parsing/Hero.dart';
 import 'package:http/http.dart' as http;
@@ -5,9 +8,16 @@ import 'package:http/http.dart' as http;
 class HeroSearchDelegate extends SearchDelegate<Result> {
   SuperHero heroesList;
   Result selectedResult;
+
   @override
   List<Widget> buildActions(BuildContext context) {
-    return [IconButton(icon: Icon(Icons.clear), onPressed: () {})];
+    return [
+      IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = '';
+          })
+    ];
   }
 
   @override
@@ -26,7 +36,7 @@ class HeroSearchDelegate extends SearchDelegate<Result> {
     return Container(
       child: Center(
         child: Text(
-          'Select from the options provided below',
+          'Select from the provided options',
           style: TextStyle(
               fontSize: 20,
               fontStyle: FontStyle.italic,
@@ -41,15 +51,20 @@ class HeroSearchDelegate extends SearchDelegate<Result> {
   Widget buildSuggestions(BuildContext context) {
     Future getAllHeroList() async {
       if (query.length > 0) {
-        var list = await http.get(
-            'https://www.superheroapi.com/api.php/836211930121768/search/$query');
         try {
+          var list = await http.get(
+              'https://www.superheroapi.com/api.php/836211930121768/search/$query');
+          Map<String, dynamic> jsonResponse = json.decode(list.body);
+          if (jsonResponse.containsKey('error')) {
+            List weightData = List();
+            jsonResponse.forEach((k, v) => weightData.add(k));
+            return weightData;
+          }
           heroesList = await superHeroFromJson(list.body);
           return heroesList.results;
         } catch (e) {
           return e.toList();
         }
-//        print('ddd ${heroesList.results[0].id}');
       }
     }
 
@@ -69,17 +84,45 @@ class HeroSearchDelegate extends SearchDelegate<Result> {
               return Container(
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 child: Center(
-                  child: Text(
-                    'No superhero found for the given name',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.grey[800]),
-                    textAlign: TextAlign.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.error,
+                        size: 30,
+                        color: Colors.red.withOpacity(0.7),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Your connection is not stable :(',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.grey[800]),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               );
             } else if (snapshot.hasData) {
+              if (snapshot.data.contains('error')) {
+                return Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child: Center(
+                    child: Text(
+                      'No superhero found for the given name',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.grey[800]),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                );
+              }
               return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (context, index) {
